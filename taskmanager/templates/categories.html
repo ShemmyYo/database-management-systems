@@ -18,25 +18,28 @@
         <div class="card-content white-text">
           <span class="card-title">{{ category.category_name }}</span>
         </div>
+
+        <!-- to be used for user managment 
+        {% if category.owner == session.user %} -->
         <div class="card-action">
           <a href="{{ url_for('edit_category', category_id=category.id) }}" class="btn-small green accent-4">Edit</a>
           <a href="#modal-{{ category.id }}" class="btn-small red modal-trigger">Delete</a>
-
-          <!-- {{ url_for('delete_category', category_id=category.id) }} -->
-
           <!-- Modal -->
           <div id="modal-{{ category.id }}" class="modal">
             <div class="modal-content">
               <h4>Delete '{{ category.category_name }}' Category?</h4>
-              <p>If you click yes, this category will be permanently deleted!</p>
+              <p>If you click DELETE, this category will be permanently deleted!</p>
             </div>
             <div class="modal-footer">
-              <a href="{{ url_for('delete_category', category_id=category.id) }}" class="btn-small red accent-4">Delete</a>
+              <a href="{{ url_for('delete_category', category_id=category.id) }}"
+                class="btn-small red accent-4">Delete</a>
               <a href="#" class="btn-small green accent-4 modal-close">Cancel</a>
             </div>
           </div>
-
         </div>
+        <!-- {% endif %} 
+        end of user managment-->
+
       </div>
     </div>
     {% endfor %}
