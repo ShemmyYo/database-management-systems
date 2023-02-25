@@ -13,10 +13,17 @@ document.addEventListener('DOMContentLoaded', function () {
   M.Datepicker.init(datePickerEl, {
     format: "dd mmmm, yyyy",
     showClearBtn: true,
-    i18n: {done: "Select"}
+    i18n: {
+      done: "Select"
+    }
   });
 
   // Option picker Init
   let optionPickerEl = document.querySelectorAll('select');
   M.FormSelect.init(optionPickerEl);
-});
+
+  // Calapsables 
+  let calapsablesEl = document.querySelectorAll('.collapsible');
+  M.Collapsible.init(calapsablesEl);
+
+  });
