@@ -29,6 +29,7 @@
             <div class="modal-content">
               <h4>Delete '{{ category.category_name }}' Category?</h4>
               <p>If you click DELETE, this category will be permanently deleted!</p>
+              <p style="color: red;"><strong>WARNING!: </strong>This action will also delete all tasks related to this function</p>
             </div>
             <div class="modal-footer">
               <a href="{{ url_for('delete_category', category_id=category.id) }}"
